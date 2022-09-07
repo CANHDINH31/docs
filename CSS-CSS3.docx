@@ -1,0 +1,16 @@
+1) Syntax
+    A CSS rule consists of a selector and a declaration block.
+    declaration consists property and value.
+    ex: 
+        p {
+            color: red;
+            text-align: center;
+        }
+
+2) Specificity, Cascading & Inheritance.
+    Inheritance: The body element in our HTML is the ancestor to all of our other visible HTML elements
+                 ex: body {
+                        font: 1em/1.4 Helvetica, Verdana, sans-serif;
+                        }
+                Using the rule above, all text (unless we specify otherwise) will be 1em with the line height scaled at 1.4 times the text height and be Helvetica or Verdana.
+    

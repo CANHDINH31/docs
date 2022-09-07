@@ -1,0 +1,168 @@
+1. A basic structure of a document
+    <!DOCTYPE html> xác định rằng tài liệu này là tài liệu HTML5
+    <html> là phần tử gốc của trang HTML
+    <head> chứa thông tin meta về trang HTML
+    <title> chỉ định tiêu đề cho trang HTML (được hiển thị trong thanh tiêu đề của trình duyệt hoặc trong tab của trang)
+    <body> xác định nội dung của tài liệu 
+
+2. Tags Type
+    2.1) TEXT:
+        Text format:
+            <b> - Bold text
+            <strong> - Important text
+            <i> - Italic text
+            <em> - Emphasized text
+            <mark> - Marked text
+            <small> - Smaller text
+            <del> - Deleted text
+            <ins> - Inserted text
+            <sub> - Subscript text
+            <sup> - Superscript text  
+
+        Others: p, span, br, h1, h2, h3, h4, h5, h6. 
+    
+    2.2) LIST: 
+            unordered lists:
+                    ex: <ul>
+                            <li>First</li>
+                            <li>Second</li>
+                        </ul>
+
+            ordered lists:
+                    ex: <ol>
+                            <li>First</li>
+                            <li>Second</li>
+                        </ol>
+
+            definition lists:
+                    ex: <dl>
+                            <dt>Flavio</dt>
+                            <dd>The name</dd>
+                            <dt>Copes</dt>
+                            <dd>The surname</dd>
+                        </dl>
+            
+            <ul>	Defines an unordered list
+            <ol>	Defines an ordered list
+            <li>	Defines a list item
+            <dl>	Defines a description list
+            <dt>	Defines a term in a description list
+            <dd>	Describes the term in a description list
+    
+    2.3) LINK:
+            ex: <a href="url">link text</a>
+                An unvisited link is underlined and blue
+                A visited link is underlined and purple
+                An active link is underlined and red
+
+            Target Attribute:
+                _self - Default. Opens the document in the same window/tab as it was clicked
+                _blank - Opens the document in a new window or tab
+                _parent - Opens the document in the parent frame
+                _top - Opens the document in the full body of the window
+            
+            Absolute URLs vs. Relative URLs:
+                Absolute URL (a full web address) in the href attribute.
+                relative URL (without the "https://www" part)
+
+            Use an Image as a Link:
+                <a href="default.asp">
+                    <img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;">
+                </a>
+            
+            Link Titles:
+                <a href="https://www.w3schools.com/html/" title="Go to W3Schools HTML section">
+                    Visit our HTML Tutorial
+                </a>
+
+    2.4) TABLE:
+
+            <table>	Defines a table
+            <th>	Defines a header cell in a table
+            <tr>	Defines a row in a table
+            <td>	Defines a cell in a table
+            <caption>	Defines a table caption
+            <colgroup>	Specifies a group of one or more columns in a table for formatting
+            <col>	Specifies column properties for each column within a <colgroup> element
+            <thead>	Groups the header content in a table
+            <tbody>	Groups the body content in a table
+            <tfoot>	Groups the footer content in a table
+
+    2.5) FORM:
+            <form> element is used to create an HTML form for user input
+
+            <input type="text">	Displays a single-line text input field
+            <input type="radio">	Displays a radio button (for selecting one of many choices)
+            <input type="checkbox">	Displays a checkbox (for selecting zero or more of many choices)
+            <input type="submit">	Displays a submit button (for submitting the form)
+            <input type="button">	Displays a clickable button
+
+            <label> tag defines a label for many form elements.
+            The "for attribute" of the <label> to bind them together
+    
+    2.6) META TAGS IN  HEADER:
+            The <meta> tag defines metadata about an HTML document. Metadata is data (information) about data.
+            <head>
+                <meta charset="UTF-8">
+                <meta name="description" content="Free Web tutorials"> // Define description for website
+                <meta name="keywords" content="HTML, CSS, JavaScript">  // Define keywords for search engines:
+                <meta name="author" content="John Doe"> // Define the author of a page:
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"> // Setting the viewport to make your website look good on all devices:
+            </head>
+    
+    2.7) Audio, Media, Iframe
+            Audio/Video Tag:
+                ex:
+                    <audio controls>
+                        <source src="horse.ogg" type="audio/ogg">
+                    </audio>
+                
+                    attribute: controls, autoplay, muted,...
+
+            Media:  Multimedia on the web is sound, music, videos, movies, and animations.
+                    Multimedia files have formats and different extensions like: .wav, .mp3, .mp4, .mpg, .wmv, .avi, ...
+            
+            Iframe:
+                    <iframe src="https://www.w3schools.com" title="W3Schools Free Online Web Tutorials"></iframe>                   
+                    Attribute: allowfullscreen, name, height, width, src, ...
+
+3) SEMANTIC Tags: ex: article, aside, details, figcaption, figure, footer, header, main, mark, nav, section, summary, time
+        
+        non-semantic:  ex: <div> and <span> - Tells nothing about its content.
+        semantic:   ex: <form>, <table>, <article> - Clearly defines its content.
+
+        
+        <article>	    Defines independent, self-contained content
+        <aside>	        Defines content aside from the page content
+        <details>	    Defines additional details that the user can view or hide
+        <figcaption>	Defines a caption for a <figure> element
+        <figure>	    Specifies self-contained content, like illustrations, diagrams, photos, code listings, etc.
+        <footer>	    Defines a footer for a document or section
+        <header>	    Specifies a header for a document or section
+        <main>	        Specifies the main content of a document
+        <mark>	        Defines marked/highlighted text
+        <nav>	        Defines navigation links
+        <section>	    Defines a section in a document
+        <summary>	    Defines a visible heading for a <details> element
+        <time>	        Defines a date/time
+
+4) Distinct: Inline vs. Block tag
+
+        Block Elements: Block elements begin from a new line by default and cover space to its left and right as far as it can go. 
+                        The height that it covers is equal to the content height. Also, it covers the whole horizontal space of its parent element.
+
+                        ex: article, aside, div, fieldset, figcaption, figure, footer, form, h1-h6, header, hr, li, main, nav, section, table.
+        
+        Inline Elements: Inline elements never start from a new line and only cover the width according to the size of bounded tags in the HTML element.
+
+                        ex: a, b, br, button, code, img, input, span, textarea,...
+                
+                    
+
+
+       
+
+                
+                
+                
+
