@@ -13,4 +13,166 @@
                         font: 1em/1.4 Helvetica, Verdana, sans-serif;
                         }
                 Using the rule above, all text (unless we specify otherwise) will be 1em with the line height scaled at 1.4 times the text height and be Helvetica or Verdana.
+    Cascading: 
+        ex:     <h1>This is my heading.</h1>
+                 h1 { color: red; }
+                h1 {  color: blue;}
+
+                In the example, we have two rules that could apply to the <h1> element. The <h1> content ends up being colored blue. 
+                This is because both the rules are from the same source, have an identical element selector, and therefore, carry the same specificity, but the last one in the source order wins.
+    Specificity:
+        ex:    .main-heading { color: red; }
+                h1 { color: blue; }
+                <h1 class="main-heading">This is my heading.</h1>
+
+                Example, we again have two rules that could apply to the <h1> element. 
+                The <h1> content below ends up being colored red because the class selector main-heading gives its rule a higher specificity. 
+                So even though the rule with the <h1> element selector appears further down in the source order, the one with the higher specificity, defined using the class selector, will be applied.
     
+    3) Box model, Margin collapses
+
+        3.1) Box Model:
+            Content - The content of the box, where text and images appear
+            Padding - Clears an area around the content. The padding is transparent
+            Border - A border that goes around the padding and content
+            Margin - Clears an area outside the border. The margin is transparent
+
+        3.2) Margin collapses:
+            margin	A shorthand property for setting all the margin properties in one declaration
+            margin-bottom	Sets the bottom margin of an element
+            margin-left	Sets the left margin of an element
+            margin-right	Sets the right margin of an element
+            margin-top	Sets the top margin of an element
+    
+    4) Common misunderstanding about some Shorthands CSS
+        ex: background-color: #000;
+            background-image: url(images/bg.gif);
+            background-repeat: no-repeat;
+            background-position: left top;
+            => background: #000 url(images/bg.gif) no-repeat left top;
+        
+        ex: font-style: italic;
+            font-weight: bold;
+            font-size: .8em;
+            line-height: 1.2;
+            font-family: Arial, sans-serif;
+            => font: italic bold .8em/1.2 Arial, sans-serif;
+
+        ex: border-width: 1px;
+            border-style: solid;
+            border-color: #000;
+            => border: 1px solid #000;
+
+        ex: margin-top: 10px;
+            margin-right: 5px;
+            margin-bottom: 10px;
+            margin-left: 5px;
+            => margin: 10px 5px 10px 5px;
+
+    5) Layout structure with flex, grid box
+        5.1) Layout with flex box: (main axis, cross axis)         
+            flex-direction: row, row-reverse, column, column-reverse.
+            flex-wrap: wrap, no-wrap.
+            flex-grow, flex-shrink, flex-basis
+            align-items: stretch, flex-start, flex-end, center
+            justify-content: flex-start, flex-end, center, space-around, space-between, space-evenly
+            justify-items: stretch, center, start, end.
+
+        5.2) Layout with grid box
+             Columns: grid-template-columns
+             Rows: grid-template-rows
+             Gaps,Lines
+
+    6) Layout structure with positions
+            Static: is the default value that an element will have. 
+                    This means if you don’t declare position for an element in CSS, it will automatically be set to static.
+
+            Relative: is similar to static in that relatively positioned elements will follow the normal flow of the webpage. 
+                      But the main difference is that using relative will now unlock the other CSS layout properties.
+            
+            Absolute: will cause an element to be taken out of that normal flow of the webpage.
+
+            Fixed:  will take the element out of the normal flow, and also position it in the same place in the viewport (what’s visible on screen). 
+                    This means that scrolling will not affect its position at all.
+
+            Sticky:  Elements will initially behave like position: relative elements, but if you keep scrolling, they will get taken out of the normal flow and behave like position: fixed wherever you have positioned them.
+
+    7) Display
+        inline:	        Displays an element as an inline element (like <span>). Any height and width properties will have no effect	
+        block:	        Displays an element as a block element (like <p>). It starts on a new line, and takes up the whole width	
+        contents:	    Makes the container disappear, making the child elements children of the element the next level up in the DOM	
+        flex:	        Displays an element as a block-level flex container	
+        grid:	        Displays an element as a block-level grid container	
+        inline-block:	Displays an element as an inline-level block container. The element itself is formatted as an inline element, but you can apply height and width values	
+        inline-flex:	Displays an element as an inline-level flex container	
+        inline-grid:	Displays an element as an inline-level grid container	
+        inline-table:	The element is displayed as an inline-level table	
+        list-item:  	Let the element behave like a <li> element	
+        run-in:     	Displays an element as either block or inline, depending on context	
+        table:      	Let the element behave like a <table> element	
+        table-caption: 	Let the element behave like a <caption> element	
+        table-column-group: 	Let the element behave like a <colgroup> element	
+        table-header-group: 	Let the element behave like a <thead> element	
+        table-footer-group: 	Let the element behave like a <tfoot> element	
+        table-row-group:    	Let the element behave like a <tbody> element	
+        table-cell:         	Let the element behave like a <td> element	
+        table-column:       	Let the element behave like a <col> element	
+        table-row:          	Let the element behave like a <tr> element	
+        none:               	The element is completely removed	
+        initial	Sets:           this property to its default value. Read about initial	
+        inherit	Inherits:       this property from its parent element. Read about inherit
+            
+
+    8) Pseudo class vs. Pseudo element
+        8.1) Pseudo class
+            Dynamic pseudo-classes -  :link, :visited, :hover, :active, :focus
+            UI element states pseudo-classes - :enabled, :disabled, :checked
+            Structural pseudo-classes -  :first-child, :nth-child(n), :nth-last-child(n), :nth-of-type(n), :nth-last-of-type(n), :last-child, :first-of-type, :last-of-type, :only-child, :only-of-type, :root, :empty
+            Other pseudo-classes- :not(x), :target, :lang(language)
+        8.2) Pseudo-elements- ::before, ::after, ::first-letter, ::first-line
+
+    
+    9) Difference among Units (em, rem, px; vw, vh; etc)
+        EM: Relative to the parent element
+        REM: Relative to the root element (HTML tag)
+        %: Relative to the parent element
+        VW: Relative to the viewport’s width
+        VH: Relative to the viewport’s height
+
+    10) Web fonts
+        In the first article of the module, we explored the basic CSS features available for styling fonts and text. 
+        In this article we will go further, exploring web fonts in detail. 
+        We'll see how to use custom fonts with your web page to allow for more varied, custom text styling.
+
+        ex: @font-face {
+            font-family: "myFont";
+            src: url("myFont.woff2");
+            }
+
+        html {
+            font-family: "myFont", "Bitstream Vera Serif", serif;
+        }
+
+    11) Overflow
+        visible:	The overflow is not clipped. It renders outside the element's box. This is default	
+        hidden:	    The overflow is clipped, and the rest of the content will be invisible. Content can be scrolled programmatically (e.g. by setting scrollLeft or scrollTo())	
+        clip:   	The overflow is clipped, and the rest of the content will be invisible. Forbids scrolling, including programmatic scrolling.	
+        scroll: 	The overflow is clipped, but a scroll-bar is added to see the rest of the content	
+        auto:   	If overflow is clipped, a scroll-bar should be added to see the rest of the content	
+        initial:   	Sets this property to its default value. Read about initial	
+        inherit:   	Inherits this property from its parent element.
+    
+    12) Writing Mode
+        horizontal-tb: For ltr scripts, content flows horizontally from left to right. For rtl scripts, content flows horizontally from right to left. The next horizontal line is positioned below the previous line.
+        vertical-rl: For ltr scripts, content flows vertically from top to bottom, and the next vertical line is positioned to the left of the previous line. For rtl scripts, content flows vertically from bottom to top, and the next vertical line is positioned to the right of the previous line.
+        vertical-lr: For ltr scripts, content flows vertically from top to bottom, and the next vertical line is positioned to the right of the previous line. For rtl scripts, content flows vertically from bottom to top, and the next vertical line is positioned to the left of the previous line.
+        sideways-rl: For ltr scripts, content flows vertically from bottom to top. For rtl scripts, content flows vertically from top to bottom. All the glyphs, even those in vertical scripts, are set sideways toward the right.
+        sideways-lr: For ltr scripts, content flows vertically from top to bottom. For rtl scripts, content flows vertically from bottom to top. All the glyphs, even those in vertical scripts, are set sideways toward the left.
+        lr Deprecated: Deprecated except for SVG1 documents. For CSS, use horizontal-tb instead.
+        lr-tb Depreca:ted Deprecated except for SVG1 documents. For CSS, use horizontal-tb instead.
+        rl Deprecated: Deprecated except for SVG1 documents. For CSS, use horizontal-tb instead.
+        tb Deprecated: Deprecated except for SVG1 documents. For CSS, use vertical-lr instead.
+        tb-lr Depreca:ted Deprecated except for SVG1 documents. For CSS, use vertical-lr instead.
+        tb-rl Depreca:ted Deprecated except for SVG1 documents. For CSS, use vertical-rl instead.
+
+    13) Transition, Animations
